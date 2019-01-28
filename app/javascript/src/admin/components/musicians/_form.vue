@@ -6,6 +6,11 @@
       <input type="text" v-model="musician.name" class="form-control">
     </div>
     <div class="form-group">
+      <label for="">{{ $t('activerecord.models.musician.birthYear') }}</label>
+      <span class='error'>{{errors.name}}</span>
+      <input type="text" v-model="musician.birthYear" class="form-control">
+    </div>
+    <div class="form-group">
       <label for="">{{ $t('activerecord.models.musician.band') }}</label>
       <span class='error'>{{errors.band}}</span>
       <select v-model="musician.band" class="form-control">

@@ -6,12 +6,14 @@
           <tr>
             <th>{{ $t('musicians.name') }}</th>
             <th>{{ $t('musicians.band') }}</th>
+            <th>{{ $t('musicians.birthYear') }}</th>
           </tr>
         </thead>
         <tbody>
            <tr v-for='musician in musicians' :key="musician.id">
              <td><router-link :to="{ name: 'musician_path', params: {id: musician.id} }">{{ musician.name }}</router-link></td>
              <td>{{ musician.band }}</td>
+             <td>{{ musician.birthYear }}</td>
            </tr>
          </tbody>
        </table>

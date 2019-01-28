@@ -18,6 +18,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Band</th>
+            <th>Birth Year</th>
             <th></th>
           </tr>
         </thead>
@@ -26,6 +27,7 @@
             <td><router-link :to="{ name: 'edit_musician_path', params: { id: musician.id }}">{{ musician.id }}</router-link></td>
             <td><router-link :to="{ name: 'edit_musician_path', params: { id: musician.id }}">{{ musician.name }}</router-link></td>
             <td>{{ musician.band }}</td>
+            <td>{{ musician.birthYear }}</td>
             <td><a href="#" @click="destroy(musician.id)">×</a></td>
           </tr>
         </tbody>

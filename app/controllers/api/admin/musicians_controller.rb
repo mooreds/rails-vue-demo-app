@@ -1,5 +1,23 @@
 class Api::Admin::MusiciansController < Api::Admin::AdminController
   before_action :load_musician, except: [:index, :new, :create]
+  before_action :underscore_params!
+
+  def underscore_params!
+      underscore_hash = -> (hash) do
+            hash.transform_keys!(&:underscore)
+                hash.each do |key, value|
+                        if value.is_a?(ActionController::Parameters)
+                                  underscore_hash.call(value)
+                                        elsif value.is_a?(Array)
+                                                  value.each do |item|
+                                                              next unless item.is_a?(ActionController::Parameters)
+                                                                        underscore_hash.call(item)
+                                                                                end
+                                                        end
+                            end
+                  end
+        underscore_hash.call(params)
+  end
 
   def index
     @musicians = Musician.search(search_params)
@@ -47,6 +65,7 @@ class Api::Admin::MusiciansController < Api::Admin::AdminController
     def musician_params
       params.require(:musician).permit(
         :name,
+        :birth_year,
         :band
       )
     end

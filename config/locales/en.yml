@@ -21,6 +21,7 @@ en:
         id: "Id"
         name: "Name"
         band: "Band"
+        birthYear: "Birth Year"
         details: "Details about this musician:"
       errors:
         title: "Error pages"
@@ -63,3 +64,4 @@ en:
           musician:
             name: "Name"
             band: "Band"
+            birthYear: "Birth Year"

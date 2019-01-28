@@ -7,6 +7,7 @@
         <li>{{ $t('musicians.id') }}: {{ musician.id }}</li>
         <li>{{ $t('musicians.name') }}: {{ musician.name }}</li>
         <li>{{ $t('musicians.band') }}: {{  musician.band }}</li>
+        <li>{{ $t('musicians.birthYear') }}: {{  musician.birthYear }}</li>
       </ul>
     </div>
   </layout>
