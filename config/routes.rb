@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'dan/show'
   mount ActionCable.server => '/cable'
+  get '/dan', to: 'dan#show'
 
   localized do
     devise_for :users, only: [:sessions]
