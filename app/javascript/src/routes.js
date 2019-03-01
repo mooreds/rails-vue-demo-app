@@ -19,6 +19,9 @@ const router = new VueRouter({
     { path: '/errors', component: ErrorsIndex, name: 'errors_path' },
     { path: '/500', component: Error500 },
     { path: '/404', component: Error404 },
+    { path: '/dan', 
+      beforeEnter() {location.href = '/dan'
+    }
     { path: '*', redirect: '/404' }
   ]
 });
