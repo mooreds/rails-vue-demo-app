@@ -21,7 +21,7 @@ const router = new VueRouter({
     { path: '/404', component: Error404 },
     { path: '/dan', 
       beforeEnter() {location.href = '/dan'
-    }
+    },
     { path: '*', redirect: '/404' }
   ]
 });
